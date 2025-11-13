@@ -1,0 +1,21 @@
+// ERRADO: Alto nível depende diretamente de uma implementação concreta
+
+class Netflix {
+  play(movie) {
+    console.log(`📺 Reproduzindo '${movie}' na Netflix...`);
+  }
+}
+
+class StreamingService {
+  constructor() {
+    this.platform = new Netflix();  // ❌ dependência direta
+  }
+
+  watch(movie) {
+    this.platform.play(movie);
+  }
+}
+
+// Uso
+const service = new StreamingService();
+service.watch("Stranger Things");
