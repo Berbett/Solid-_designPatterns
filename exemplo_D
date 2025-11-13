@@ -9,13 +9,13 @@ class StreamingPlatform {
 
 class Netflix extends StreamingPlatform {
   play(movie) {
-    console.log(`📺 Reproduzindo '${movie}' na Netflix...`);
+    console.log(` Reproduzindo '${movie}' na Netflix...`);
   }
 }
 
 class AmazonPrime extends StreamingPlatform {
   play(movie) {
-    console.log(`🎞️ Reproduzindo '${movie}' na Amazon Prime Video...`);
+    console.log(` Reproduzindo '${movie}' na Amazon Prime Video...`);
   }
 }
 
