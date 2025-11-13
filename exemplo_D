@@ -1,0 +1,37 @@
+
+
+class StreamingPlatform {
+  play(movie) {
+    throw new Error("O método play() deve ser implementado.");
+  }
+}
+
+
+class Netflix extends StreamingPlatform {
+  play(movie) {
+    console.log(`📺 Reproduzindo '${movie}' na Netflix...`);
+  }
+}
+
+class AmazonPrime extends StreamingPlatform {
+  play(movie) {
+    console.log(`🎞️ Reproduzindo '${movie}' na Amazon Prime Video...`);
+  }
+}
+
+class StreamingService {
+  constructor(platform) {
+    this.platform = platform; 
+  }
+
+  watch(movie) {
+    this.platform.play(movie);
+  }
+}
+
+
+const service1 = new StreamingService(new Netflix());
+service1.watch("Stranger Things");
+
+const service2 = new StreamingService(new AmazonPrime());
+service2.watch("The Boys");
